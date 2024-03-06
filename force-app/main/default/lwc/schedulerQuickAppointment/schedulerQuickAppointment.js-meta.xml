@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property label="Slots to Return" name="slotCount" type="Integer" required="true" default="5" max="10"/>
+            <property label="Default Work Type ID" name="defaultWT" type="String" required="false"/>
+            <property label="Default Service Territory ID" name="defaultST" type="String" required="false"/>
+            <property label="Anonymous Booking" name="anonymous" type="Boolean" required="true" default="false"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

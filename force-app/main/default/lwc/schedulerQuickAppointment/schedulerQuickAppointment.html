@@ -1,0 +1,67 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card
+title="Scheduler Quick Appointment"
+class="slds-card__body_inner"
+icon-name="standard:service_appointment">
+<div class ="slds-grid slds-gutters">
+    <div class="slds-col">
+        <lightning-record-picker
+        object-api-name="WorkType"
+        placeholder="Search..."
+        label="Select a Work Type"
+        value={worktype}
+        onload={handleWTload}
+        onchange={handleWTChange}>
+        
+        
+        
+        </lightning-record-picker>
+
+    </div>
+    <div class="slds-col">
+        <lightning-record-picker
+        object-api-name="ServiceTerritory"
+        placeholder="Search..."
+        label="Select a Service Territory"
+        value={serviceterritory}
+        onchange={handleSTChange}>
+        </lightning-record-picker>
+
+    </div>
+</div>
+<div class ="slds-grid slds-gutters">
+    <div class="slds-col">
+        <lightning-input 
+        type="datetime" 
+        value={datetime} 
+        onchange={handleDTChange}>
+    </lightning-input>
+    </div>
+
+
+    <div class="slds-col">
+        <div class="slds-p-top_medium"></div>
+        <lightning-button 
+            variant="brand" 
+            class="slds-m-left_x-small" 
+            label="Find Appointments" 
+            onclick={getAppointments}>
+        </lightning-button>
+    </div>
+
+</div>
+
+    <div>
+        <div class="slds-p-top_small"></div>
+        <lightning-datatable
+                key-field="id"
+                data={slots}
+                columns={columns}
+                hide-checkbox-column="true"
+                onrowaction={bookSA}/>>
+        </lightning-datatable>
+    </div>   
+
+    </lightning-card>
+</template>
